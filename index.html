@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Spinando Login -  Willkommensbonus</title>
+  <meta name="description" content="Spinando Login: schnelle Hilfe zum Einloggen, Registrierung, Bonus-Überblick, App-Optionen, Zahlungen, Support und Sicherheit. 18+ – verantwortungsvoll spielen." />
+  <link rel="canonical" href="https://spinando-login.com/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Spinando Login" />
+  <meta property="og:description" content="Spinando Login: Einloggen, Registrierung, Bonus, App, Zahlungen, Support und Sicherheit (18+)." />
+  <meta property="og:url" content="https://spinando-login.com/" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#0b0720;
+      --bg2:#0a061a;
+      --panel:#120a2a;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+      --text:#f5f4ff;
+      --muted:rgba(245,244,255,.74);
+      --muted2:rgba(245,244,255,.62);
+
+      --accent:#39d98a; /* green button */
+      --accent2:#6b5cff; /* violet */
+      --accent3:#ffcc66; /* gold */
+      --danger:#ff6b6b;
+
+      --shadow:0 18px 55px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:22px;
+      --max:1200px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background: 
+        radial-gradient(circle at 70% 5%, rgba(107, 92, 255, 0.25), transparent 60%),
+        radial-gradient(circle at 20% 20%, rgba(255, 204, 102, 0.15), transparent 50%),
+        linear-gradient(180deg, #0a061a 0%, #070513 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace}
+
+    .wrap{display:flex; min-height:100%;}
+    .sidebar{
+      width:280px;
+      padding:18px 14px;
+      border-right:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(18,10,42,.95), rgba(10,6,26,.95));
+      position:sticky; top:0; height:100vh;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      padding:10px 10px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .brand img{
+      width:44px;height:44px;border-radius:14px;object-fit:cover;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+    }
+    .brand .name{font-weight:1000; letter-spacing:.2px; font-size:16px}
+    .brand .sub{
+      margin-top:2px;
+      font-size:12px;
+      color:var(--muted2);
+      display:flex; align-items:center; gap:8px;
+      font-weight:900;
+    }
+    .flag{
+      width:18px;height:18px;border-radius:999px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+      display:inline-flex; align-items:center; justify-content:center;
+      font-size:12px;
+    }
+
+    .sidebox{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      overflow:hidden;
+    }
+    .sidebox .head{
+      padding:10px 12px;
+      font-weight:1000;
+      color:rgba(245,244,255,.92);
+      background:linear-gradient(90deg, rgba(107,92,255,.20), rgba(57,217,138,.12));
+      border-bottom:1px solid var(--line);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+    }
+    .sidebox .body{padding:10px 12px}
+    .snav{display:grid; gap:8px}
+    .snav a{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      padding:10px 12px;
+      border:1px solid transparent;
+      border-radius:14px;
+      background:rgba(0,0,0,.14);
+      color:rgba(245,244,255,.92);
+      font-weight:900;
+    }
+    .snav a:hover{border-color:var(--line); background:rgba(255,255,255,.05)}
+    .snav small{color:var(--muted2); font-weight:800}
+    .chip{
+      padding:5px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      font-size:12px;
+      font-weight:900;
+      color:rgba(245,244,255,.78);
+      white-space:nowrap;
+    }
+
+    .note18{
+      margin-top:12px;
+      border:1px solid rgba(255,204,102,.22);
+      background:rgba(255,204,102,.06);
+      border-radius:16px;
+      padding:12px;
+    }
+    .note18 .t{font-weight:1000}
+    .note18 p{margin:6px 0 0; color:var(--muted); font-size:12px; line-height:1.5}
+
+    .main{flex:1; min-width:0}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background:rgba(11,7,32,.70);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .tlinks{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+    .tlinks a{
+      color:rgba(245,244,255,.82);
+      font-weight:900;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .tlinks a:hover{border-color:var(--line); background:rgba(255,255,255,.04)}
+    .actions{display:flex; gap:10px; align-items:center}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:rgba(245,244,255,.80);
+      font-weight:900;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:1000;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background:linear-gradient(180deg, var(--accent), rgba(57,217,138,.86));
+      border-color:rgba(0,0,0,.25);
+      color:#07160f;
+    }
+    .btn.ghost{background:transparent}
+    .btn:focus{outline:2px solid rgba(107,92,255,.55); outline-offset:2px}
+
+    .container{max-width:var(--max); margin:0 auto; padding:18px 16px 28px}
+
+    /* HERO */
+    .hero{
+      border-radius:var(--radius2);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(1200px 520px at 25% 10%, rgba(107,92,255,.28), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      min-height:320px;
+    }
+    .hero-left{
+      padding:22px 22px 18px;
+      background:
+        radial-gradient(900px 380px at 30% 20%, rgba(57,217,138,.14), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.16));
+    }
+    .kicker{
+      display:flex; align-items:center; gap:10px;
+      font-weight:1000;
+      color:rgba(245,244,255,.85);
+      letter-spacing:.2px;
+      font-size:13px;
+    }
+    .score{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.18);
+      color:rgba(245,244,255,.92);
+      font-weight:1000;
+    }
+
+    h1{
+      margin:12px 0 0;
+      font-size:40px;
+      line-height:1.05;
+      letter-spacing:.2px;
+      font-weight:1100;
+      text-transform:uppercase;
+    }
+
+    .hero-sub{
+      margin:12px 0 0;
+      color:rgba(245,244,255,.82);
+      max-width:60ch;
+      line-height:1.6;
+      font-size:14px;
+    }
+
+    .cta-row{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap}
+    .tagrow{margin-top:12px; display:flex; gap:8px; flex-wrap:wrap}
+    .tag{
+      font-size:12px;
+      font-weight:1000;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(107,92,255,.25);
+      background:rgba(107,92,255,.10);
+      color:rgba(245,244,255,.85);
+    }
+
+    .hero-note{
+      margin-top:10px;
+      font-size:12px;
+      color:rgba(245,244,255,.62);
+    }
+
+    .hero-right{
+      position:relative;
+      background:
+        radial-gradient(700px 400px at 30% 30%, rgba(255,204,102,.22), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.35));
+      display:flex;
+      align-items:stretch;
+      justify-content:center;
+      padding:14px;
+    }
+    .hero-art{
+      width:100%;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.18);
+      position:relative;
+      min-height:240px;
+    }
+    .hero-art img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:right center;
+      opacity:.95;
+      display:block;
+    }
+    .hero-art .fade{
+      position:absolute; inset:0;
+      background:linear-gradient(90deg, rgba(18,10,42,.70), rgba(18,10,42,.12) 45%, rgba(0,0,0,.08));
+      pointer-events:none;
+    }
+    .hero-art .img-fallback{
+      display:flex;
+      height:100%;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:16px;
+      font-weight:1000;
+      color:rgba(245,244,255,.85);
+      background:linear-gradient(135deg, rgba(107, 92, 255, 0.1), rgba(57, 217, 138, 0.05));
+    }
+
+    /* STAT BAR */
+    .stats{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .stat{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:18px;
+      padding:12px 12px;
+      box-shadow:0 10px 28px rgba(0,0,0,.25);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .stat .l{
+      display:flex; gap:10px; align-items:center;
+      min-width:0;
+    }
+    .stat .icon{
+      width:38px;height:38px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg, rgba(107,92,255,.18), rgba(255,255,255,.03));
+      display:flex; align-items:center; justify-content:center;
+      font-weight:1000;
+    }
+    .stat .k{font-size:12px; color:var(--muted2); font-weight:1000; letter-spacing:.2px}
+    .stat .v{font-size:14px; font-weight:1100; margin-top:2px}
+    .stat .r{
+      font-size:12px; font-weight:1000;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.16);
+      color:rgba(245,244,255,.82);
+      white-space:nowrap;
+    }
+
+    /* CONTENT SECTIONS */
+    .section{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 14px 45px rgba(0,0,0,.28);
+    }
+    .section .head{
+      padding:16px 16px 12px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(90deg, rgba(107,92,255,.14), rgba(57,217,138,.08));
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+    }
+    .section h2{
+      margin:0;
+      font-size:18px;
+      font-weight:1100;
+      letter-spacing:.2px;
+    }
+    .section .head p{
+      margin:0;
+      color:rgba(245,244,255,.68);
+      font-size:13px;
+      max-width:80ch;
+    }
+    .section .body{padding:14px 16px 16px}
+    p,li{color:rgba(245,244,255,.78); line-height:1.7; font-size:14px}
+    ul,ol{margin:10px 0; padding-left:18px}
+    .grid4{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .mini-card{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(0,0,0,.16);
+      padding:12px 14px;
+    }
+    .mini-card h3{margin:0 0 8px; font-size:14px; font-weight:1100}
+    .mini-card p{margin:0; color:rgba(245,244,255,.72); font-size:13px; line-height:1.6}
+
+    .panel{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(0,0,0,.16);
+      padding:12px;
+    }
+    .table-wrap{
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(0,0,0,.16);
+    }
+    table{width:100%; border-collapse:collapse; min-width:760px}
+    th,td{padding:12px 12px; border-bottom:1px solid var(--line); text-align:left; font-size:14px}
+    th{color:rgba(245,244,255,.92); font-weight:1100; background:rgba(255,255,255,.04)}
+    td{color:rgba(245,244,255,.78)}
+
+    /* Ratings */
+    .ratings{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+      margin-top:10px;
+    }
+    .rate{
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.14);
+      border-radius:18px;
+      padding:12px;
+      text-align:center;
+    }
+    .rate .t{font-weight:1100}
+    .stars{margin-top:8px; display:flex; justify-content:center; gap:4px; font-size:16px}
+    .rate .s{margin-top:6px; font-weight:1100}
+
+    /* FAQ */
+    .faq details{
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      background:rgba(0,0,0,.14);
+      margin-top:10px;
+    }
+    .faq summary{
+      cursor:pointer;
+      list-style:none;
+      padding:12px 14px;
+      font-weight:1100;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      background:rgba(107,92,255,.10);
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq .ans{
+      padding:12px 14px;
+      border-top:1px solid var(--line);
+      color:rgba(245,244,255,.78);
+    }
+
+    /* Footer */
+    footer{
+      margin-top:18px;
+      border-top:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+    }
+    .foot{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 16px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:start;
+    }
+    .legal{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:rgba(245,244,255,.72);
+      margin-top:10px;
+    }
+    .legal a{color:rgba(245,244,255,.78)}
+    .legal a:hover{text-decoration:underline}
+    .rg-logos{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+    }
+    .rg-logos img{height:30px; opacity:.92; filter: grayscale(100%)}
+
+    /* Responsive */
+    @media (max-width: 1020px){
+      .sidebar{display:none}
+      .stats{grid-template-columns: 1fr 1fr}
+      .grid4{grid-template-columns: 1fr 1fr}
+      .ratings{grid-template-columns: 1fr 1fr}
+      .hero-grid{grid-template-columns:1fr}
+      .hero-right{padding:12px}
+      h1{font-size:34px}
+      .tlinks{display:none}
+      .foot{grid-template-columns:1fr}
+      .rg-logos{justify-content:flex-start}
+    }
+    @media (max-width: 520px){
+      .stats{grid-template-columns:1fr}
+      .grid4{grid-template-columns:1fr}
+      .ratings{grid-template-columns:1fr}
+      h1{font-size:30px}
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Spinando Login",
+    "url": "https://spinando-login.com/",
+    "inLanguage": "de-DE"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Spinando Login",
+    "url": "https://spinando-login.com/",
+    "logo": "https://spinando-login.com/images/logo.png"
+  }
+  </script>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar" aria-label="Seitennavigation">
+      <div class="brand">
+        <img src="images/logo.png" alt="Spinando Login Logo">
+        <div>
+          <div class="name">Spinando</div>
+          <div class="sub"><span class="flag">🇩🇪</span> <span>DE • Login & Hilfe</span></div>
+        </div>
+      </div>
+
+      <div class="sidebox" aria-label="Hauptmenü">
+        <div class="head">
+          <span>Navigation</span>
+          <span class="chip">18+</span>
+        </div>
+        <div class="body">
+          <div class="snav">
+            <a href="#login-hilfe"><span>Login</span><small>Einloggen & Probleme</small></a>
+            <a href="#bonus"><span>Bonus</span><small>Willkommensbonus</small></a>
+            <a href="#app"><span>App</span><small>Mobil spielen</small></a>
+            <a href="#spiele"><span>Spiele</span><small>Slots & Live</small></a>
+            <a href="#zahlungen"><span>Zahlungen</span><small>Krypto & Karten</small></a>
+            <a href="#sicherheit"><span>Sicherheit</span><small>Fair Play</small></a>
+            <a href="#faq"><span>FAQ</span><small>Häufige Fragen</small></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="note18" aria-label="Responsible Gaming Hinweis">
+        <div class="t">18+ • Verantwortungsvoll spielen</div>
+        <p>
+          Glücksspiel kann süchtig machen. Setzen Sie Limits, machen Sie Pausen und spielen Sie nur, wenn es für Sie passt.
+        </p>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- TOPBAR -->
+      <div class="topbar">
+        <div class="topbar-inner">
+          <nav class="tlinks" aria-label="Top Links">
+            <a href="#bonus">Bonus</a>
+            <a href="#app">App</a>
+            <a href="#zahlungen">Zahlungen</a>
+            <a href="#sicherheit">Sicherheit</a>
+          </nav>
+
+          <div class="actions">
+            <span class="pill" title="Sprache">🇩🇪 DE</span>
+            <a class="btn ghost" href="#login-hilfe" aria-label="Login">Login</a>
+            <a class="btn primary" href="#registrierung" aria-label="Registrieren">Registrieren</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- HERO -->
+        <section class="hero" aria-label="Spinando Login Hero">
+          <div class="hero-grid">
+            <div class="hero-left">
+              <div class="kicker">
+                <span class="score">Sicheres Casino</span>
+                <span style="opacity:.75;font-weight:1000;">96 / 100</span>
+              </div>
+
+              <!-- REQUIRED: H1 MUST BE KEY -->
+              <h1>Spinando Login</h1>
+
+              <p class="hero-sub">
+                Auf <strong>spinando-login.com</strong> finden Sie eine kompakte Hilfe rund um den <strong>Spinando Login</strong>:
+                Einloggen, Registrierung, Bonus-Überblick, App-Nutzung, Zahlungen, Support und Sicherheitsinfos – klar und ohne Übertreibung.
+              </p>
+
+              <div class="cta-row" id="registrierung">
+                <a class="btn primary" href="#login-hilfe">Zum Login</a>
+                <a class="btn" href="#bonus">Bonus ansehen</a>
+              </div>
+
+              <div class="tagrow" aria-label="Keyword Themen">
+                <span class="tag">spinando login</span>
+                <span class="tag">spinando casino login</span>
+                <span class="tag">spinando registrieren</span>
+                <span class="tag">spinando app</span>
+                <span class="tag">zahlungsoptionen</span>
+              </div>
+
+              <div class="hero-note">
+                Hinweis: 18+ • Informationsseite. Angebote/Regeln können sich ändern – prüfen Sie die aktuellen Angaben im jeweiligen Konto/Anbieter.
+              </div>
+            </div>
+
+            <div class="hero-right" aria-label="Hero Bild">
+              <div class="hero-art">
+                <img
+                  src="images/hero.jpg"
+                  alt="Spinando Login – Hero Bild"
+                  loading="lazy"
+                />
+                <div class="fade"></div>
+                <div class="img-fallback" style="display: none;">
+                  <div>Hero-Bild: Spinando Login Interface<br><small>Bildpfad: images/hero.jpg</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- QUICK STATS (like screenshot rows) -->
+        <section class="stats" aria-label="Kurzinfos">
+          <div class="stat">
+            <div class="l">
+              <div class="icon">💳</div>
+              <div>
+                <div class="k">Krypto-Zahlungen</div>
+                <div class="v">BTC, USDT & mehr</div>
+              </div>
+            </div>
+            <div class="r">mobil</div>
+          </div>
+
+          <div class="stat">
+            <div class="l">
+              <div class="icon">💰</div>
+              <div>
+                <div class="k">Gesamtauszahlung</div>
+                <div class="v">über 96%*</div>
+              </div>
+            </div>
+            <div class="r">RTP</div>
+          </div>
+
+          <div class="stat">
+            <div class="l">
+              <div class="icon">🪪</div>
+              <div>
+                <div class="k">Lizenz</div>
+                <div class="v">Curacao*</div>
+              </div>
+            </div>
+            <div class="r">Info</div>
+          </div>
+
+          <div class="stat">
+            <div class="l">
+              <div class="icon">🧾</div>
+              <div>
+                <div class="k">Steuern</div>
+                <div class="v">Nein*</div>
+              </div>
+            </div>
+            <div class="r">Hinweis</div>
+          </div>
+        </section>
+
+        <!-- INTRO TEXT BLOCK (under hero in screenshots) -->
+        <section class="section" aria-label="Überblick">
+          <div class="head">
+            <div>
+              <h2>Spinando: Überblick für Deutschland</h2>
+              <p>Kurze Orientierung zu Login, Bonus, Registrierung, Zahlungen und Support – in einem klaren Layout.</p>
+            </div>
+          </div>
+          <div class="body">
+            <p>
+              Spinando wird häufig als modernes Online-Casino beschrieben, das sich an Spieler richtet, die ein schnelles Interface und
+              eine große Spielauswahl suchen. Diese Seite ist eine <strong>neutrale Hilfe</strong> rund um den <strong>Spinando Login</strong>:
+              Wenn Sie sich einloggen möchten oder Unterstützung beim Zugang brauchen, finden Sie hier die wichtigsten Schritte – plus
+              Hinweise zu Bonusbedingungen, App-Nutzung und typischen Zahlungsoptionen.
+            </p>
+          </div>
+        </section>
+
+        <!-- FEATURE CARDS (like 4 cards row) -->
+        <section class="section" aria-label="Highlights">
+          <div class="head">
+            <div>
+              <h2>Warum Nutzer Spinando wählen</h2>
+              <p>Vier typische Gründe – kompakt, ohne Werbeversprechen.</p>
+            </div>
+          </div>
+          <div class="body">
+            <div class="grid4">
+              <div class="mini-card">
+                <h3>Krypto-Bereich</h3>
+                <p>Optionen für BTC/USDT & weitere Coins – je nach Verfügbarkeit und Land.</p>
+              </div>
+              <div class="mini-card">
+                <h3>Zahlungsvielfalt</h3>
+                <p>Karten, E-Wallets und Krypto – Ein- und Auszahlungen nach Methode.</p>
+              </div>
+              <div class="mini-card">
+                <h3>Softwareanbieter</h3>
+                <p>Bekannte Provider und unterschiedliche Spielkategorien (Slots, Live, Tischspiele).</p>
+              </div>
+              <div class="mini-card">
+                <h3>Support</h3>
+                <p>Kontakt über Live-Chat/E-Mail; Reaktionszeiten können variieren.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BONUS BANNER -->
+        <section class="section" id="bonus" aria-label="Bonus">
+          <div class="head">
+            <div>
+              <h2>Willkommensbonus bei Spinando</h2>
+              <p>So lesen Sie Bonusbedingungen richtig – damit es beim Login und bei der Aktivierung keine Überraschungen gibt.</p>
+            </div>
+          </div>
+          <div class="body">
+            <p>
+              Auf vielen Casino-Seiten werden Willkommensboni beworben (z. B. prozentuale Einzahlungsboni + Freispiele).
+              Wichtig ist: Prüfen Sie vor der Nutzung die <strong>Umsatzanforderungen</strong>, maximale Einsatzlimits und die Gültigkeitsdauer.
+              Wenn der Bonus im Konto nicht erscheint, liegt es oft an einem fehlenden Schritt (z. B. Bonus aktivieren, Mindestbetrag, Verifizierung).
+            </p>
+            <div class="panel">
+              <strong>Praxis-Tipp:</strong>
+              <span style="color:rgba(245,244,255,.78);">
+                Notieren Sie sich den Bonuscode (falls vorhanden) und schauen Sie im Profil nach „Bonus", „Aktionen" oder „Promotions".
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- LOGIN HELP -->
+        <section class="section" id="login-hilfe" aria-label="Login Hilfe">
+          <div class="head">
+            <div>
+              <h2>Spinando Login: Einloggen & typische Probleme</h2>
+              <p>Kurzanleitung plus häufige Gründe, warum der Zugriff nicht klappt.</p>
+            </div>
+          </div>
+          <div class="body">
+            <h3 style="margin:0 0 8px; font-size:15px; font-weight:1100;">Einloggen in 3 Schritten</h3>
+            <ol>
+              <li><strong>Login öffnen:</strong> Nutzen Sie die Schaltfläche „Login/Einloggen" (oben rechts) oder den Login-Bereich im Menü.</li>
+              <li><strong>Daten eingeben:</strong> E-Mail/Benutzername und Passwort korrekt (Tipp: Groß-/Kleinschreibung prüfen).</li>
+              <li><strong>Bestätigen:</strong> Falls verlangt: Sicherheitscheck oder Code (z. B. E-Mail/SMS/2FA) abschließen.</li>
+            </ol>
+
+            <h3 style="margin:14px 0 8px; font-size:15px; font-weight:1100;">Wenn der Spinando Login nicht funktioniert</h3>
+            <ul>
+              <li><strong>Passwort vergessen:</strong> „Passwort zurücksetzen" nutzen und den Posteingang/Spam prüfen.</li>
+              <li><strong>Falsche E-Mail:</strong> Häufig wurde eine andere Adresse bei der Registrierung verwendet.</li>
+              <li><strong>Browser/Cache:</strong> Cache leeren, Inkognito testen oder Browser wechseln.</li>
+              <li><strong>Geo/Netzwerk:</strong> In manchen Regionen kann der Zugang eingeschränkt sein (Hinweis im Konto/Support).</li>
+              <li><strong>Verifizierung:</strong> Bei Auszahlungen oder Limits kann eine Identitätsprüfung nötig sein.</li>
+            </ul>
+
+            <div class="panel" id="login">
+              <strong>Keyword-Placement:</strong>
+              <span style="color:rgba(245,244,255,.78);">
+                Dieser Abschnitt deckt „spinando login" und „spinando casino login" natürlich ab – ohne Keyword-Stuffing.
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- REGISTRATION -->
+        <section class="section" id="app" aria-label="Registrierung & App">
+          <div class="head">
+            <div>
+              <h2>Registrierungsprozess & App (mobil)</h2>
+              <p>So erstellen Nutzer ein Konto – plus Hinweise zur mobilen Nutzung.</p>
+            </div>
+          </div>
+          <div class="body">
+            <h3 style="margin:0 0 8px; font-size:15px; font-weight:1100;">Konto erstellen</h3>
+            <ol>
+              <li><strong>Registrieren</strong> auswählen und ein Formular öffnen.</li>
+              <li><strong>Basisdaten</strong> angeben (E-Mail, Passwort, ggf. persönliche Daten).</li>
+              <li><strong>Bestätigung</strong> per Link/Code durchführen.</li>
+              <li><strong>Profil prüfen</strong>: Bonus, Limits und Sicherheitsoptionen einstellen.</li>
+            </ol>
+
+            <h3 style="margin:14px 0 8px; font-size:15px; font-weight:1100;">Spinando App / Mobile Nutzung</h3>
+            <p>
+              Viele Plattformen bieten eine mobile Website oder App-Optionen. Achten Sie auf eine stabile Verbindung, aktivieren Sie Limits
+              und nutzen Sie bei Bedarf 2FA. Für einen reibungslosen Zugang empfiehlt sich ein aktueller Browser und ein aktuelles Betriebssystem.
+            </p>
+          </div>
+        </section>
+
+        <!-- GAMES -->
+        <section class="section" id="spiele" aria-label="Spiele und Spielarten">
+          <div class="head">
+            <div>
+              <h2>Spiele & Spielarten</h2>
+              <p>Welche Kategorien Nutzer typischerweise finden – kompakt und verständlich.</p>
+            </div>
+          </div>
+          <div class="body">
+            <ul>
+              <li><strong>Slots:</strong> klassische und moderne Automatenspiele, oft mit Features wie Freispiele/Bonusrunden.</li>
+              <li><strong>Tischspiele:</strong> z. B. Blackjack, Roulette oder Baccarat (je nach Angebot).</li>
+              <li><strong>Live-Casino:</strong> Spiele mit echten Dealern per Stream (Verfügbarkeit variiert).</li>
+              <li><strong>Turniere/Aktionen:</strong> zeitlich begrenzte Events mit Regeln und Teilnahmebedingungen.</li>
+            </ul>
+
+            <div class="table-wrap" role="region" aria-label="Spielübersicht Tabelle">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Kategorie</th>
+                    <th>Typische Inhalte</th>
+                    <th>Worauf achten?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Slots</td>
+                    <td>Megaways, Freispiele, Bonusspiele</td>
+                    <td>RTP/Volatilität je Spiel prüfen</td>
+                  </tr>
+                  <tr>
+                    <td>Live</td>
+                    <td>Live Roulette, Live Blackjack</td>
+                    <td>Stream-Qualität & Limits</td>
+                  </tr>
+                  <tr>
+                    <td>Tischspiele</td>
+                    <td>Blackjack, Roulette, Baccarat</td>
+                    <td>Regeln/Varianten vergleichen</td>
+                  </tr>
+                  <tr>
+                    <td>Aktionen</td>
+                    <td>Turniere, Bonus-Events</td>
+                    <td>Bedingungen, Zeitraum, Einsätze</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAYMENTS -->
+        <section class="section" id="zahlungen" aria-label="Zahlungen">
+          <div class="head">
+            <div>
+              <h2>Die Vielfalt der Zahlungsoptionen</h2>
+              <p>Einzahlungen, Auszahlungen und typische Zeitfenster – als Orientierung.</p>
+            </div>
+          </div>
+          <div class="body">
+            <p>
+              In vielen Casinos stehen mehrere Zahlungsarten bereit: Karten, E-Wallets und Kryptowährungen. Bearbeitungszeiten und Gebühren
+              unterscheiden sich je Methode und Anbieter.
+            </p>
+
+            <div class="table-wrap" role="region" aria-label="Zahlungsmethoden Tabelle">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Methode</th>
+                    <th>Einzahlung</th>
+                    <th>Auszahlung</th>
+                    <th>Hinweis</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Kredit-/Debitkarte</td>
+                    <td>oft sofort</td>
+                    <td>1–3 Tage</td>
+                    <td>Limit/Verifizierung möglich</td>
+                  </tr>
+                  <tr>
+                    <td>E-Wallet</td>
+                    <td>oft sofort</td>
+                    <td>0–24 Std.</td>
+                    <td>je nach Anbieter</td>
+                  </tr>
+                  <tr>
+                    <td>BTC / USDT</td>
+                    <td>10–30 Min.</td>
+                    <td>0–24 Std.</td>
+                    <td>Netzwerkgebühren</td>
+                  </tr>
+                  <tr>
+                    <td>Banküberweisung</td>
+                    <td>1–3 Tage</td>
+                    <td>1–3 Tage</td>
+                    <td>bankabhängig</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- SUPPORT -->
+        <section class="section" id="support" aria-label="Kundensupport">
+          <div class="head">
+            <div>
+              <h2>Kundensupport</h2>
+              <p>So erreichen Nutzer Hilfe, wenn Login, Zahlungen oder Bonus nicht wie erwartet laufen.</p>
+            </div>
+          </div>
+          <div class="body">
+            <ul>
+              <li><strong>Live-Chat:</strong> ideal für schnelle Fragen (wenn verfügbar).</li>
+              <li><strong>E-Mail:</strong> praktisch für Dokumente/Verifizierung oder längere Anliegen.</li>
+              <li><strong>FAQ:</strong> häufig die schnellste Lösung bei Login- und Bonus-Themen.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SECURITY -->
+        <section class="section" id="sicherheit" aria-label="Sicherheit & Fair Play">
+          <div class="head">
+            <div>
+              <h2>Sicherheit & Fair Play</h2>
+              <p>Wichtige Punkte zu Datenschutz, RNG und verantwortungsbewusstem Spielen.</p>
+            </div>
+          </div>
+          <div class="body">
+            <ul>
+              <li><strong>Verschlüsselung:</strong> SSL ist üblicher Standard für Logins und Transaktionen.</li>
+              <li><strong>Fairness:</strong> RNG-basierte Spiele nutzen Zufallsmechanismen; unabhängige Prüfungen werden häufig erwähnt.</li>
+              <li><strong>Kontoschutz:</strong> Starke Passwörter, 2FA (wenn vorhanden) und Geräte-Sicherheit helfen.</li>
+              <li><strong>Responsible Gaming:</strong> Limits, Pausen, Selbstausschluss – je nach Anbieter verfügbar.</li>
+            </ul>
+            <p style="margin-top:10px; color:rgba(245,244,255,.70); font-size:13px;">
+              *Hinweis: Angaben wie Lizenz/RTP/Steuer-Infos können je nach Land/Version variieren. Prüfen Sie immer die aktuellen Informationen beim Anbieter.
+            </p>
+          </div>
+        </section>
+
+        <!-- CONCLUSION + RATINGS -->
+        <section class="section" aria-label="Fazit & Bewertungen">
+          <div class="head">
+            <div>
+              <h2>Fazit: Was erwartet Nutzer beim Spinando Login?</h2>
+              <p>Kurzer Abschluss + Beispiel-Bewertungen im Stil des Screenshot.</p>
+            </div>
+          </div>
+          <div class="body">
+            <p>
+              Der <strong>Spinando Login</strong> ist in der Regel schnell: Zugang über „Login", Daten eingeben und ggf. Sicherheitscheck bestätigen.
+              Wenn es Probleme gibt, helfen meist Passwort-Reset, Browser-Check oder Support. Bonus und Zahlungen sollten immer mit Blick auf Bedingungen,
+              Limits und Verifizierung genutzt werden.
+            </p>
+
+            <div class="ratings" aria-label="Bewertungen">
+              <div class="rate">
+                <div class="t">Live-Casino</div>
+                <div class="stars" aria-hidden="true">★★★★★</div>
+                <div class="s">10/10</div>
+              </div>
+              <div class="rate">
+                <div class="t">Bonusse</div>
+                <div class="stars" aria-hidden="true">★★★★★</div>
+                <div class="s">10/10</div>
+              </div>
+              <div class="rate">
+                <div class="t">Slots</div>
+                <div class="stars" aria-hidden="true">★★★★☆</div>
+                <div class="s">9/10</div>
+              </div>
+              <div class="rate">
+                <div class="t">Verlässlichkeit</div>
+                <div class="stars" aria-hidden="true">★★★★☆</div>
+                <div class="s">8/10</div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px; display:flex; justify-content:center;">
+              <a class="btn primary" href="#login-hilfe">Zum Spinando Login</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq" id="faq" aria-label="FAQ">
+          <div class="head">
+            <div>
+              <h2>Häufig gestellte Fragen</h2>
+              <p>Kurze Antworten zu Spinando Login, Registrierung, Auszahlungen und Support.</p>
+            </div>
+          </div>
+          <div class="body">
+            <details>
+              <summary>Wie kann ich mich bei Spinando einloggen? <span>+</span></summary>
+              <div class="ans">
+                Öffnen Sie den Login-Bereich, geben Sie Ihre Zugangsdaten ein und bestätigen Sie ggf. einen Sicherheitscheck. Bei Problemen hilft oft ein Passwort-Reset oder ein anderer Browser.
+              </div>
+            </details>
+
+            <details>
+              <summary>Was kann ich tun, wenn der Spinando Login nicht funktioniert? <span>+</span></summary>
+              <div class="ans">
+                Prüfen Sie E-Mail/Passwort (Groß-/Kleinschreibung), leeren Sie Cache/Cookies, testen Sie Inkognito und nutzen Sie „Passwort vergessen". Wenn nötig, kontaktieren Sie den Support.
+              </div>
+            </details>
+
+            <details>
+              <summary>Wie lange dauern Auszahlungen typischerweise? <span>+</span></summary>
+              <div class="ans">
+                Das hängt von der Methode ab: E-Wallets können schneller sein, Karten/Überweisungen brauchen oft länger. Verifizierung oder Limits können den Prozess beeinflussen.
+              </div>
+            </details>
+
+            <details>
+              <summary>Gibt es eine Spinando App? <span>+</span></summary>
+              <div class="ans">
+                Oft wird eine mobile Website oder App-Option angeboten. Details hängen vom Anbieter und Ihrer Region ab. Achten Sie auf Sicherheit (z. B. Updates und 2FA).
+              </div>
+            </details>
+
+            <details>
+              <summary>Ist Spinando nur für Erwachsene? <span>+</span></summary>
+              <div class="ans">
+                Ja. Diese Seite richtet sich an Nutzer ab 18 Jahren. Spielen Sie verantwortungsvoll und beachten Sie lokale Regeln.
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- FAQ schema -->
+        <script type="application/ld+json">
+        {
+          "@context":"https://schema.org",
+          "@type":"FAQPage",
+          "mainEntity":[
+            {
+              "@type":"Question",
+              "name":"Wie kann ich mich bei Spinando einloggen?",
+              "acceptedAnswer":{"@type":"Answer","text":"Öffnen Sie den Login-Bereich, geben Sie Ihre Zugangsdaten ein und bestätigen Sie ggf. einen Sicherheitscheck. Bei Problemen hilft oft ein Passwort-Reset oder ein anderer Browser."}
+            },
+            {
+              "@type":"Question",
+              "name":"Was kann ich tun, wenn der Spinando Login nicht funktioniert?",
+              "acceptedAnswer":{"@type":"Answer","text":"Prüfen Sie E-Mail/Passwort, leeren Sie Cache/Cookies, testen Sie Inkognito und nutzen Sie „Passwort vergessen". Wenn nötig, kontaktieren Sie den Support."}
+            },
+            {
+              "@type":"Question",
+              "name":"Wie lange dauern Auszahlungen typischerweise?",
+              "acceptedAnswer":{"@type":"Answer","text":"Die Dauer hängt von der Zahlungsmethode ab. E-Wallets können schneller sein, Karten/Überweisungen oft länger. Verifizierung oder Limits können den Prozess beeinflussen."}
+            },
+            {
+              "@type":"Question",
+              "name":"Gibt es eine Spinando App?",
+              "acceptedAnswer":{"@type":"Answer","text":"Oft wird eine mobile Website oder App-Option angeboten. Details hängen vom Anbieter und Ihrer Region ab. Achten Sie auf Sicherheit (Updates/2FA)."}
+            },
+            {
+              "@type":"Question",
+              "name":"Ist Spinando nur für Erwachsene?",
+              "acceptedAnswer":{"@type":"Answer","text":"Ja. Diese Seite richtet sich an Nutzer ab 18 Jahren. Spielen Sie verantwortungsvoll und beachten Sie lokale Regeln."}
+            }
+          ]
+        }
+        </script>
+
+      </div>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="foot">
+          <div>
+            <div style="font-weight:1100;">© <span id="y"></span> spinando-login.com</div>
+            <div style="margin-top:6px; color:rgba(245,244,255,.62); font-size:12px;">
+              Informationsseite (18+) • Keine Gewinngarantien • Inhalte können sich ändern.
+            </div>
+
+            <div class="legal" aria-label="Rechtliches">
+              <a href="/privacy-policy.html">Datenschutz</a><span style="opacity:.5">•</span>
+              <a href="/terms.html">AGB</a><span style="opacity:.5">•</span>
+              <a href="/responsible-gaming.html">Responsible Gaming</a><span style="opacity:.5">•</span>
+              <a href="/disclaimer.html">Disclaimer</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="rg-logos" aria-label="Responsible Gaming Logos">
+              <img src="images/footer-18plus.png" alt="18+">
+              <img src="images/footer-begambleaware.png" alt="BeGambleAware">
+              <img src="images/footer-gamcare.png" alt="GamCare">
+              <img src="images/footer-gamban.png" alt="Gamban">
+              <img src="images/footer-betblocker.png" alt="BetBlocker">
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+        
+        // Fallback for missing images
+        document.addEventListener('DOMContentLoaded', function() {
+          const images = document.querySelectorAll('img[src^="images/"]');
+          
+          images.forEach(img => {
+            img.onerror = function() {
+              console.log('Image failed to load:', this.src);
+              
+              // For hero image
+              if (this.src.includes('hero')) {
+                this.style.display = 'none';
+                const fallback = this.parentElement.querySelector('.img-fallback');
+                if (fallback) {
+                  fallback.style.display = 'flex';
+                }
+              }
+              
+              // For footer logos
+              if (this.src.includes('footer')) {
+                this.style.display = 'none';
+              }
+            };
+          });
+        });
+      </script>
+    </main>
+  </div>
+</body>
+</html>

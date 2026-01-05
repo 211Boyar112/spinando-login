@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Disclaimer - Haftungsausschluss - Spinando Login</title>
+  <meta name="description" content="Disclaimer (Haftungsausschluss) für spinando-login.com. Wichtige rechtliche Hinweise zu Inhalten, externen Links und Nutzungsbedingungen." />
+  <link rel="canonical" href="https://spinando-login.com/disclaimer.html" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <style>
+    :root{
+      --bg:#0b0720;
+      --bg2:#0a061a;
+      --panel:#120a2a;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+      --text:#f5f4ff;
+      --muted:rgba(245,244,255,.74);
+      --muted2:rgba(245,244,255,.62);
+
+      --accent:#39d98a; /* green button */
+      --accent2:#6b5cff; /* violet */
+      --accent3:#ffcc66; /* gold */
+      --danger:#ff6b6b;
+
+      --shadow:0 18px 55px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:22px;
+      --max:1200px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background: 
+        radial-gradient(circle at 70% 5%, rgba(107, 92, 255, 0.25), transparent 60%),
+        radial-gradient(circle at 20% 20%, rgba(255, 204, 102, 0.15), transparent 50%),
+        linear-gradient(180deg, #0a061a 0%, #070513 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace}
+
+    .wrap{display:flex; min-height:100%;}
+    .sidebar{
+      width:280px;
+      padding:18px 14px;
+      border-right:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(18,10,42,.95), rgba(10,6,26,.95));
+      position:sticky; top:0; height:100vh;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      padding:10px 10px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .brand img{
+      width:44px;height:44px;border-radius:14px;object-fit:cover;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+    }
+    .brand .name{font-weight:1000; letter-spacing:.2px; font-size:16px}
+    .brand .sub{
+      margin-top:2px;
+      font-size:12px;
+      color:var(--muted2);
+      display:flex; align-items:center; gap:8px;
+      font-weight:900;
+    }
+    .flag{
+      width:18px;height:18px;border-radius:999px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+      display:inline-flex; align-items:center; justify-content:center;
+      font-size:12px;
+    }
+
+    .sidebox{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      overflow:hidden;
+    }
+    .sidebox .head{
+      padding:10px 12px;
+      font-weight:1000;
+      color:rgba(245,244,255,.92);
+      background:linear-gradient(90deg, rgba(107,92,255,.20), rgba(57,217,138,.12));
+      border-bottom:1px solid var(--line);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+    }
+    .sidebox .body{padding:10px 12px}
+    .snav{display:grid; gap:8px}
+    .snav a{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      padding:10px 12px;
+      border:1px solid transparent;
+      border-radius:14px;
+      background:rgba(0,0,0,.14);
+      color:rgba(245,244,255,.92);
+      font-weight:900;
+    }
+    .snav a:hover{border-color:var(--line); background:rgba(255,255,255,.05)}
+    .snav small{color:var(--muted2); font-weight:800}
+    .chip{
+      padding:5px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      font-size:12px;
+      font-weight:900;
+      color:rgba(245,244,255,.78);
+      white-space:nowrap;
+    }
+
+    .note18{
+      margin-top:12px;
+      border:1px solid rgba(255,204,102,.22);
+      background:rgba(255,204,102,.06);
+      border-radius:16px;
+      padding:12px;
+    }
+    .note18 .t{font-weight:1000}
+    .note18 p{margin:6px 0 0; color:var(--muted); font-size:12px; line-height:1.5}
+
+    .main{flex:1; min-width:0}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background:rgba(11,7,32,.70);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .tlinks{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+    .tlinks a{
+      color:rgba(245,244,255,.82);
+      font-weight:900;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .tlinks a:hover{border-color:var(--line); background:rgba(255,255,255,.04)}
+    .actions{display:flex; gap:10px; align-items:center}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:rgba(245,244,255,.80);
+      font-weight:900;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:1000;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background:linear-gradient(180deg, var(--accent), rgba(57,217,138,.86));
+      border-color:rgba(0,0,0,.25);
+      color:#07160f;
+    }
+    .btn.ghost{background:transparent}
+    .btn:focus{outline:2px solid rgba(107,92,255,.55); outline-offset:2px}
+
+    .container{max-width:var(--max); margin:0 auto; padding:18px 16px 28px}
+
+    /* HERO SECTION FOR DISCLAIMER */
+    .disclaimer-hero{
+      border-radius:var(--radius2);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(1200px 520px at 25% 10%, rgba(107,92,255,.28), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      position:relative;
+      margin-bottom:20px;
+    }
+    .disclaimer-hero-content{
+      padding:28px 24px;
+      background:
+        radial-gradient(900px 380px at 30% 20%, rgba(57,217,138,.14), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.16));
+    }
+    .disclaimer-hero h1{
+      margin:0 0 8px;
+      font-size:32px;
+      line-height:1.1;
+      letter-spacing:.2px;
+      font-weight:1100;
+    }
+    .disclaimer-hero .subtitle{
+      color:var(--accent3);
+      font-size:15px;
+      font-weight:1000;
+      margin:12px 0 0;
+    }
+
+    /* WARNING BANNER */
+    .warning-banner{
+      background:linear-gradient(135deg, rgba(255,107,107,.12), rgba(255,107,107,.06));
+      border:1px solid rgba(255,107,107,.25);
+      border-radius:18px;
+      padding:18px;
+      margin:20px 0;
+      display:flex;
+      align-items:flex-start;
+      gap:15px;
+    }
+    .warning-banner .icon{
+      font-size:24px;
+      color:var(--danger);
+      flex-shrink:0;
+    }
+    .warning-banner .content{
+      flex:1;
+    }
+    .warning-banner h3{
+      margin:0 0 8px;
+      color:var(--danger);
+      font-weight:1100;
+      font-size:16px;
+    }
+    .warning-banner p{
+      margin:0;
+      color:rgba(245,244,255,.85);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    /* CONTENT SECTIONS */
+    .section{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 14px 45px rgba(0,0,0,.28);
+    }
+    .section .head{
+      padding:16px 16px 12px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(90deg, rgba(107,92,255,.14), rgba(57,217,138,.08));
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+    }
+    .section h2{
+      margin:0;
+      font-size:18px;
+      font-weight:1100;
+      letter-spacing:.2px;
+    }
+    .section .head p{
+      margin:0;
+      color:rgba(245,244,255,.68);
+      font-size:13px;
+      max-width:80ch;
+    }
+    .section .body{padding:14px 16px 16px}
+    p,li{color:rgba(245,244,255,.78); line-height:1.7; font-size:14px}
+    ul,ol{margin:10px 0; padding-left:18px}
+    
+    .panel{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(0,0,0,.16);
+      padding:12px;
+      margin:15px 0;
+    }
+    
+    strong{color:var(--text); font-weight:1100}
+    em{color:var(--muted2); font-style:italic}
+
+    /* LEGAL BOXES */
+    .legal-box{
+      border:1px solid rgba(255,107,107,.3);
+      background:rgba(255,107,107,.08);
+      border-radius:16px;
+      padding:16px;
+      margin:15px 0;
+    }
+    .legal-box.warning{
+      border-color:rgba(255,107,107,.3);
+      background:rgba(255,107,107,.08);
+    }
+    .legal-box.info{
+      border-color:rgba(57,217,138,.3);
+      background:rgba(57,217,138,.08);
+    }
+    .legal-box.notice{
+      border-color:rgba(255,204,102,.3);
+      background:rgba(255,204,102,.08);
+    }
+    .legal-box h3{
+      margin:0 0 10px;
+      font-size:15px;
+      font-weight:1100;
+    }
+    .legal-box.warning h3{color:var(--danger)}
+    .legal-box.info h3{color:var(--accent)}
+    .legal-box.notice h3{color:var(--accent3)}
+
+    /* RESPONSIBILITY GRID */
+    .responsibility-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:15px;
+      margin:20px 0;
+    }
+    .responsibility-item{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(0,0,0,.14);
+      padding:18px;
+      text-align:center;
+    }
+    .responsibility-item .icon{
+      font-size:24px;
+      margin-bottom:10px;
+      display:block;
+    }
+    .responsibility-item h3{
+      margin:0 0 8px;
+      font-size:15px;
+      font-weight:1100;
+    }
+    .responsibility-item p{
+      margin:0;
+      font-size:13px;
+      color:var(--muted2);
+      line-height:1.5;
+    }
+
+    /* KEY POINTS */
+    .key-points{
+      border-left:4px solid var(--accent2);
+      background:rgba(107,92,255,.06);
+      padding:15px 15px 15px 20px;
+      margin:20px 0;
+      border-radius:0 12px 12px 0;
+    }
+    .key-points h3{
+      margin:0 0 10px;
+      color:var(--accent2);
+      font-weight:1100;
+      font-size:15px;
+    }
+    .key-points ul{
+      margin:0;
+      padding-left:15px;
+    }
+    .key-points li{
+      margin-bottom:6px;
+      color:var(--muted);
+    }
+
+    /* Footer */
+    footer{
+      margin-top:18px;
+      border-top:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+    }
+    .foot{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 16px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:start;
+    }
+    .legal{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:rgba(245,244,255,.72);
+      margin-top:10px;
+    }
+    .legal a{color:rgba(245,244,255,.78)}
+    .legal a:hover{text-decoration:underline}
+    .rg-logos{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+    }
+    .rg-logos img{height:30px; opacity:.92; filter: grayscale(100%)}
+
+    /* Responsive */
+    @media (max-width: 1020px){
+      .sidebar{display:none}
+      .tlinks{display:none}
+      .disclaimer-hero h1{font-size:28px}
+      .responsibility-grid{grid-template-columns:1fr}
+      .foot{grid-template-columns:1fr}
+      .rg-logos{justify-content:flex-start}
+    }
+    @media (max-width: 520px){
+      .disclaimer-hero h1{font-size:24px}
+      .disclaimer-hero-content{padding:20px 16px}
+      .section .body{padding:12px 14px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar" aria-label="Seitennavigation">
+      <div class="brand">
+        <img src="images/logo.png" alt="Spinando Login Logo">
+        <div>
+          <div class="name">Spinando</div>
+          <div class="sub"><span class="flag">🇩🇪</span> <span>DE • Login & Hilfe</span></div>
+        </div>
+      </div>
+
+      <div class="sidebox" aria-label="Hauptmenü">
+        <div class="head">
+          <span>Navigation</span>
+          <span class="chip">18+</span>
+        </div>
+        <div class="body">
+          <div class="snav">
+            <a href="/"><span>Startseite</span><small>Zurück zur Hauptseite</small></a>
+            <a href="/#login-hilfe"><span>Login</span><small>Einloggen & Probleme</small></a>
+            <a href="/#bonus"><span>Bonus</span><small>Willkommensbonus</small></a>
+            <a href="/#app"><span>App</span><small>Mobil spielen</small></a>
+            <a href="/#zahlungen"><span>Zahlungen</span><small>Krypto & Karten</small></a>
+            <a href="/#sicherheit"><span>Sicherheit</span><small>Fair Play</small></a>
+            <a href="/#faq"><span>FAQ</span><small>Häufige Fragen</small></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebox" aria-label="Rechtliches">
+        <div class="head">
+          <span>Rechtliches</span>
+        </div>
+        <div class="body">
+          <div class="snav">
+            <a href="privacy-policy.html"><span>Datenschutz</span><small>Datenschutzerklärung</small></a>
+            <a href="terms.html"><span>AGB</span><small>Nutzungsbedingungen</small></a>
+            <a href="disclaimer.html" style="background:rgba(107,92,255,.12); border-color:rgba(107,92,255,.3);">
+              <span>Disclaimer</span><small>Aktuelle Seite</small>
+            </a>
+            <a href="responsible-gaming.html"><span>Responsible Gaming</span><small>Sicheres Spielen</small></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="note18" aria-label="Responsible Gaming Hinweis">
+        <div class="t">18+ • Verantwortungsvoll spielen</div>
+        <p>
+          Glücksspiel kann süchtig machen. Setzen Sie Limits, machen Sie Pausen und spielen Sie nur, wenn es für Sie passt.
+        </p>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- TOPBAR -->
+      <div class="topbar">
+        <div class="topbar-inner">
+          <nav class="tlinks" aria-label="Top Links">
+            <a href="/#bonus">Bonus</a>
+            <a href="/#app">App</a>
+            <a href="/#zahlungen">Zahlungen</a>
+            <a href="/#sicherheit">Sicherheit</a>
+          </nav>
+
+          <div class="actions">
+            <span class="pill" title="Sprache">🇩🇪 DE</span>
+            <a class="btn ghost" href="/#login-hilfe" aria-label="Login">Login</a>
+            <a class="btn primary" href="/#registrierung" aria-label="Registrieren">Registrieren</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- DISCLAIMER HERO -->
+        <section class="disclaimer-hero" aria-label="Disclaimer Übersicht">
+          <div class="disclaimer-hero-content">
+            <h1>Disclaimer (Haftungsausschluss)</h1>
+            <div class="subtitle">Wichtige rechtliche Hinweise und Haftungsbeschränkungen</div>
+            <p style="color:rgba(245,244,255,.82); margin:12px 0 0; font-size:15px; line-height:1.6;">
+              Diese Seite enthält wichtige rechtliche Informationen zur Nutzung unserer Website. Bitte lesen Sie diese Hinweise sorgfältig.
+            </p>
+          </div>
+        </section>
+
+        <!-- WARNING BANNER -->
+        <div class="warning-banner">
+          <div class="icon">⚖️</div>
+          <div class="content">
+            <h3>Rechtlicher Hinweis</h3>
+            <p>
+              Dieser Disclaimer ist Teil unserer rechtlichen Dokumente. Durch die Nutzung unserer Website erkennen Sie diesen Haftungsausschluss an. 
+              Wenn Sie mit diesen Bedingungen nicht einverstanden sind, nutzen Sie bitte unsere Website nicht.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 1 -->
+        <section class="section">
+          <div class="head">
+            <h2>1. Grundlegender Haftungsausschluss</h2>
+          </div>
+          <div class="body">
+            <p>
+              Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Der Anbieter übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte.
+            </p>
+            
+            <div class="legal-box warning">
+              <h3>⚠️ Wichtiger Hinweis</h3>
+              <p style="margin:0;">
+                Diese Website ist ein <strong>reines Informationsportal</strong>. Wir sind <strong>kein Online-Casino</strong>, bieten keine Glücksspiel-Dienstleistungen an und akzeptieren keine Einzahlungen oder Wetten. Alle Informationen dienen ausschließlich informativen Zwecken.
+              </p>
+            </div>
+
+            <div class="responsibility-grid">
+              <div class="responsibility-item">
+                <span class="icon">💼</span>
+                <h3>Informationscharakter</h3>
+                <p>Alle Inhalte dienen ausschließlich der Information. Keine Finanz-, Rechts- oder Spielberatung.</p>
+              </div>
+              <div class="responsibility-item">
+                <span class="icon">🚫</span>
+                <h3>Keine Garantien</h3>
+                <p>Keine Gewähr für Richtigkeit, Vollständigkeit oder Aktualität der Informationen.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section class="section">
+          <div class="head">
+            <h2>2. Haftung für Inhalte</h2>
+          </div>
+          <div class="body">
+            <p>
+              Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+            </p>
+            
+            <div class="key-points">
+              <h3>Verpflichtungen zur Entfernung von Inhalten</h3>
+              <ul>
+                <li>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt</li>
+                <li>Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich</li>
+                <li>Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen</li>
+              </ul>
+            </div>
+
+            <div class="legal-box info">
+              <h3>ℹ️ Aktualität der Informationen</h3>
+              <p style="margin:0;">
+                Informationen zu Online-Casinos, Boni und Spielen können sich ändern. Wir empfehlen, stets die aktuellen Bedingungen direkt beim jeweiligen Anbieter zu prüfen.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section class="section">
+          <div class="head">
+            <h2>3. Haftung für Links</h2>
+          </div>
+          <div class="body">
+            <p>
+              Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+            </p>
+
+            <div class="legal-box notice">
+              <h3>📌 Externe Links und Verweise</h3>
+              <p style="margin:0;">
+                Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
+              </p>
+            </div>
+
+            <p><strong>Unsere Prüfungsverfahren:</strong></p>
+            <ul>
+              <li>Regelmäßige Überprüfung verlinkter Seiten auf Rechtsverstöße</li>
+              <li>Unverzügliche Entfernung von Links bei Bekanntwerden von Rechtsverletzungen</li>
+              <li>Keine permanente inhaltliche Kontrolle der verlinkten Seiten</li>
+            </ul>
+
+            <p style="margin-top:15px; font-size:13px; color:var(--muted2);">
+              <em>Bei Hinweisen auf rechtswidrige Inhalte verlinkter Seiten kontaktieren Sie uns bitte umgehend.</em>
+            </p>
+          </div>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section class="section">
+          <div class="head">
+            <h2>4. Urheberrecht und Markenrecht</h2>
+          </div>
+          <div class="body">
+            <p>
+              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+            </p>
+
+            <div class="responsibility-grid">
+              <div class="responsibility-item">
+                <span class="icon">📄</span>
+                <h3>Unsere Inhalte</h3>
+                <p>Texte, Bilder, Grafiken und Logos sind urheberrechtlich geschützt. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+              </div>
+              <div class="responsibility-item">
+                <span class="icon">®️</span>
+                <h3>Fremde Marken</h3>
+                <p>Genannte Marken und Logos sind Eigentum ihrer Rechteinhaber. Die Nennung erfolgt zu Informationszwecken ohne Partnerschaft.</p>
+              </div>
+            </div>
+
+            <div class="legal-box warning">
+              <h3>⚠️ Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden...</h3>
+              <p style="margin:0;">
+                ...werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 5 -->
+        <section class="section">
+          <div class="head">
+            <h2>5. Keine Finanz- oder Rechtsberatung</h2>
+          </div>
+          <div class="body">
+            <p>
+              Die auf dieser Website bereitgestellten Informationen stellen keine Finanzberatung, Rechtsberatung oder sonstige professionelle Beratung dar.
+            </p>
+
+            <div class="legal-box warning" style="background:rgba(255,107,107,.1);">
+              <h3>🚫 Wichtige Ausschlüsse</h3>
+              <ul style="margin:10px 0 0; padding-left:15px;">
+                <li>Keine Anlageberatung oder -empfehlung</li>
+                <li>Keine Garantie für Gewinne oder Verlustvermeidung</li>
+                <li>Keine Rechtsberatung bezüglich Glücksspielgesetzen</li>
+                <li>Keine Steuerberatung zu Glücksspielgewinnen</li>
+                <li>Keine medizinische oder psychologische Beratung</li>
+              </ul>
+            </div>
+
+            <p style="margin-top:15px;">
+              <strong>Verantwortung des Nutzers:</strong> Sie tragen die alleinige Verantwortung für Entscheidungen, die auf Grundlage der auf dieser Website bereitgestellten Informationen getroffen werden. Wir empfehlen bei wichtigen Entscheidungen stets, professionellen Rat einzuholen.
+            </p>
+          </div>
+        </section>
+
+        <!-- SECTION 6 -->
+        <section class="section">
+          <div class="head">
+            <h2>6. Glücksspiel-spezifische Hinweise</h2>
+          </div>
+          <div class="body">
+            <div class="legal-box notice" style="border-color:rgba(255,204,102,.4); background:rgba(255,204,102,.12);">
+              <h3>🎰 Besondere Risiken des Glücksspiels</h3>
+              <p style="margin:0;">
+                Glücksspiel birgt erhebliche Risiken und kann zu finanziellen Verlusten führen. Es besteht Suchtgefahr. Spielen Sie nur mit Geld, dessen Verlust Sie verkraften können. Diese Website richtet sich ausschließlich an Personen ab 18 Jahren.
+              </p>
+            </div>
+
+            <div class="key-points">
+              <h3>Wichtige Grundsätze</h3>
+              <ul>
+                <li>Glücksspiel ist kein Weg, um Geld zu verdienen</li>
+                <li>Das Haus hat immer einen statistischen Vorteil</li>
+                <li>Verluste sind Teil des Glücksspiels</li>
+                <li>Setzen Sie sich vor dem Spielen Limits</li>
+                <li>Spielen Sie verantwortungsvoll</li>
+              </ul>
+            </div>
+
+            <p><strong>Regionale Gesetze beachten:</strong></p>
+            <p>
+              Glücksspielgesetze variieren je nach Land und Region. Informieren Sie sich über die in Ihrem Wohnsitzland geltenden Gesetze. Wir übernehmen keine Verantwortung für die Einhaltung lokaler Gesetze durch Nutzer.
+            </p>
+          </div>
+        </section>
+
+        <!-- SECTION 7 -->
+        <section class="section">
+          <div class="head">
+            <h2>7. Technische Verfügbarkeit und Datenverlust</h2>
+          </div>
+          <div class="body">
+            <p>
+              Der Betreiber übernimmt keine Gewähr für die ständige Verfügbarkeit der Website. Es können technische Störungen, Wartungsarbeiten oder sonstige Gründe zu Ausfällen führen.
+            </p>
+
+            <div class="responsibility-grid">
+              <div class="responsibility-item">
+                <span class="icon">🛠️</span>
+                <h3>Technische Störungen</h3>
+                <p>Keine Haftung für temporäre Nichtverfügbarkeit aufgrund technischer Probleme, Wartung oder höherer Gewalt.</p>
+              </div>
+              <div class="responsibility-item">
+                <span class="icon">💾</span>
+                <h3>Datenverlust</h3>
+                <p>Keine Haftung für Datenverlust oder -beschädigung durch technische Probleme, Viren oder sonstige Schadsoftware.</p>
+              </div>
+            </div>
+
+            <div class="legal-box info">
+              <h3>ℹ️ Sicherheitshinweis</h3>
+              <p style="margin:0;">
+                Obwohl wir angemessene Sicherheitsvorkehrungen treffen, können wir keine absolute Sicherheit gewährleisten. Schützen Sie Ihre Geräte durch aktuelle Sicherheitssoftware und sichere Passwörter.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 8 -->
+        <section class="section">
+          <div class="head">
+            <h2>8. Änderungen und Aktualisierungen</h2>
+          </div>
+          <div class="body">
+            <p>
+              Wir behalten uns das Recht vor, diese Website und diesen Disclaimer jederzeit ohne vorherige Ankündigung zu ändern, zu ergänzen oder zu löschen.
+            </p>
+
+            <div class="key-points">
+              <h3>Änderungsprozess</h3>
+              <ul>
+                <li>Änderungen werden mit Veröffentlichung wirksam</li>
+                <li>Keine gesonderte Benachrichtigung über Änderungen</li>
+                <li>Regelmäßige Überprüfung der aktuellen Version empfohlen</li>
+                <li>Fortgesetzte Nutzung nach Änderungen gilt als Zustimmung</li>
+              </ul>
+            </div>
+
+            <p style="margin-top:15px;">
+              <strong>Letzte Aktualisierung:</strong> Dieser Disclaimer wurde zuletzt am <span id="currentDate"></span> aktualisiert.
+            </p>
+          </div>
+        </section>
+
+        <!-- SECTION 9 -->
+        <section class="section">
+          <div class="head">
+            <h2>9. Schlussbestimmungen</h2>
+          </div>
+          <div class="body">
+            <p>
+              Sollten einzelne Bestimmungen dieses Disclaimers ganz oder teilweise unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
+            </p>
+
+            <div class="legal-box notice">
+              <h3>⚖️ Anwendbares Recht und Gerichtsstand</h3>
+              <p style="margin:0;">
+                Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts. Sofern gesetzlich zulässig, ist Gerichtsstand für alle Streitigkeiten aus oder im Zusammenhang mit diesem Disclaimer unser Geschäftssitz.
+              </p>
+            </div>
+
+            <div class="panel" style="border-color:var(--accent2); background:rgba(107,92,255,.08); margin-top:20px;">
+              <p style="margin:0; text-align:center;">
+                <strong>Hinweis:</strong> Dieser Disclaimer ergänzt unsere AGB und Datenschutzerklärung. Bei Widersprüchen gelten die spezifischeren Regelungen der jeweiligen Dokumente.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FINAL ACKNOWLEDGEMENT -->
+        <div class="panel" style="text-align:center; border-color:var(--accent); background:rgba(57,217,138,.08); margin-top:30px;">
+          <p style="margin:0; font-size:15px; font-weight:900;">
+            Durch die Nutzung unserer Website bestätigen Sie, dass Sie diesen Haftungsausschluss gelesen, verstanden und akzeptiert haben.
+          </p>
+          <p style="margin:10px 0 0; font-size:13px; color:var(--muted2);">
+            Bei Fragen zu diesem Disclaimer kontaktieren Sie uns bitte über die angegebenen Kontaktmöglichkeiten.
+          </p>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="foot">
+          <div>
+            <div style="font-weight:1100;">© <span id="currentYear"></span> spinando-login.com</div>
+            <div style="margin-top:6px; color:rgba(245,244,255,.62); font-size:12px;">
+              Informationsportal (18+) • Keine Gewinngarantien • Inhalte können sich ändern.
+            </div>
+
+            <div class="legal" aria-label="Rechtliches">
+              <a href="privacy-policy.html">Datenschutz</a>
+              <span style="opacity:.5">•</span>
+              <a href="terms.html">AGB</a>
+              <span style="opacity:.5">•</span>
+              <a href="disclaimer.html" style="color:var(--accent2);">Disclaimer</a>
+              <span style="opacity:.5">•</span>
+              <a href="responsible-gaming.html">Responsible Gaming</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="rg-logos" aria-label="Responsible Gaming Logos">
+              <img src="images/footer-18plus.png" alt="18+">
+              <img src="images/footer-begambleaware.png" alt="BeGambleAware">
+              <img src="images/footer-gamcare.png" alt="GamCare">
+              <img src="images/footer-gamban.png" alt="Gamban">
+              <img src="images/footer-betblocker.png" alt="BetBlocker">
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        // Set current date and year
+        document.addEventListener('DOMContentLoaded', function() {
+          // Set current year
+          document.getElementById('currentYear').textContent = new Date().getFullYear();
+          
+          // Set current date in German format
+          const now = new Date();
+          const options = { day: 'numeric', month: 'long', year: 'numeric' };
+          const dateString = now.toLocaleDateString('de-DE', options);
+          document.getElementById('currentDate').textContent = dateString;
+          
+          // Add image fallback handling
+          const images = document.querySelectorAll('img[src^="images/"]');
+          images.forEach(img => {
+            img.onerror = function() {
+              console.log('Image failed to load:', this.src);
+              if (this.src.includes('footer')) {
+                this.style.display = 'none';
+              }
+            };
+          });
+          
+          // Add confirmation for external links
+          document.querySelectorAll('a[href^="http"]').forEach(link => {
+            if (!link.href.includes('spinando-login.com')) {
+              link.addEventListener('click', function(e) {
+                if (!confirm('Sie verlassen jetzt spinando-login.com\n\nExterne Websites unterliegen anderen Datenschutzbestimmungen und Nutzungsbedingungen.\n\nMöchten Sie fortfahren?')) {
+                  e.preventDefault();
+                }
+              });
+            }
+          });
+        });
+      </script>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Responsible Gaming - Verantwortungsvolles Spielen - Spinando Login</title>
+  <meta name="description" content="Responsible Gaming: Informationen zum verantwortungsvollen Spielen, Spielsucht-Prävention, Limits und Hilfsangeboten. Spielen Sie verantwortungsvoll!" />
+  <link rel="canonical" href="https://spinando-login.com/responsible-gaming.html" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <style>
+    :root{
+      --bg:#0b0720;
+      --bg2:#0a061a;
+      --panel:#120a2a;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+      --text:#f5f4ff;
+      --muted:rgba(245,244,255,.74);
+      --muted2:rgba(245,244,255,.62);
+
+      --accent:#39d98a; /* green button */
+      --accent2:#6b5cff; /* violet */
+      --accent3:#ffcc66; /* gold */
+      --danger:#ff6b6b;
+
+      --shadow:0 18px 55px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:22px;
+      --max:1200px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background: 
+        radial-gradient(circle at 70% 5%, rgba(107, 92, 255, 0.25), transparent 60%),
+        radial-gradient(circle at 20% 20%, rgba(255, 204, 102, 0.15), transparent 50%),
+        linear-gradient(180deg, #0a061a 0%, #070513 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace}
+
+    .wrap{display:flex; min-height:100%;}
+    .sidebar{
+      width:280px;
+      padding:18px 14px;
+      border-right:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(18,10,42,.95), rgba(10,6,26,.95));
+      position:sticky; top:0; height:100vh;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      padding:10px 10px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .brand img{
+      width:44px;height:44px;border-radius:14px;object-fit:cover;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+    }
+    .brand .name{font-weight:1000; letter-spacing:.2px; font-size:16px}
+    .brand .sub{
+      margin-top:2px;
+      font-size:12px;
+      color:var(--muted2);
+      display:flex; align-items:center; gap:8px;
+      font-weight:900;
+    }
+    .flag{
+      width:18px;height:18px;border-radius:999px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+      display:inline-flex; align-items:center; justify-content:center;
+      font-size:12px;
+    }
+
+    .sidebox{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      overflow:hidden;
+    }
+    .sidebox .head{
+      padding:10px 12px;
+      font-weight:1000;
+      color:rgba(245,244,255,.92);
+      background:linear-gradient(90deg, rgba(107,92,255,.20), rgba(57,217,138,.12));
+      border-bottom:1px solid var(--line);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+    }
+    .sidebox .body{padding:10px 12px}
+    .snav{display:grid; gap:8px}
+    .snav a{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      padding:10px 12px;
+      border:1px solid transparent;
+      border-radius:14px;
+      background:rgba(0,0,0,.14);
+      color:rgba(245,244,255,.92);
+      font-weight:900;
+    }
+    .snav a:hover{border-color:var(--line); background:rgba(255,255,255,.05)}
+    .snav small{color:var(--muted2); font-weight:800}
+    .chip{
+      padding:5px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      font-size:12px;
+      font-weight:900;
+      color:rgba(245,244,255,.78);
+      white-space:nowrap;
+    }
+
+    .note18{
+      margin-top:12px;
+      border:1px solid rgba(255,204,102,.22);
+      background:rgba(255,204,102,.06);
+      border-radius:16px;
+      padding:12px;
+    }
+    .note18 .t{font-weight:1000}
+    .note18 p{margin:6px 0 0; color:var(--muted); font-size:12px; line-height:1.5}
+
+    .main{flex:1; min-width:0}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background:rgba(11,7,32,.70);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .tlinks{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+    .tlinks a{
+      color:rgba(245,244,255,.82);
+      font-weight:900;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .tlinks a:hover{border-color:var(--line); background:rgba(255,255,255,.04)}
+    .actions{display:flex; gap:10px; align-items:center}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:rgba(245,244,255,.80);
+      font-weight:900;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:1000;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background:linear-gradient(180deg, var(--accent), rgba(57,217,138,.86));
+      border-color:rgba(0,0,0,.25);
+      color:#07160f;
+    }
+    .btn.ghost{background:transparent}
+    .btn:focus{outline:2px solid rgba(107,92,255,.55); outline-offset:2px}
+
+    .container{max-width:var(--max); margin:0 auto; padding:18px 16px 28px}
+
+    /* HERO SECTION FOR RESPONSIBLE GAMING */
+    .rg-hero{
+      border-radius:var(--radius2);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(1200px 520px at 25% 10%, rgba(107,92,255,.28), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      position:relative;
+      margin-bottom:20px;
+    }
+    .rg-hero-content{
+      padding:28px 24px;
+      background:
+        radial-gradient(900px 380px at 30% 20%, rgba(57,217,138,.14), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.16));
+    }
+    .rg-hero h1{
+      margin:0 0 8px;
+      font-size:32px;
+      line-height:1.1;
+      letter-spacing:.2px;
+      font-weight:1100;
+    }
+    .rg-hero .subtitle{
+      color:var(--accent3);
+      font-size:15px;
+      font-weight:1000;
+      margin:12px 0 0;
+    }
+
+    /* WARNING BANNER */
+    .warning-banner{
+      background:linear-gradient(135deg, rgba(255,107,107,.12), rgba(255,107,107,.06));
+      border:1px solid rgba(255,107,107,.25);
+      border-radius:18px;
+      padding:18px;
+      margin:20px 0;
+      display:flex;
+      align-items:flex-start;
+      gap:15px;
+    }
+    .warning-banner .icon{
+      font-size:24px;
+      color:var(--danger);
+      flex-shrink:0;
+    }
+    .warning-banner .content{
+      flex:1;
+    }
+    .warning-banner h3{
+      margin:0 0 8px;
+      color:var(--danger);
+      font-weight:1100;
+      font-size:16px;
+    }
+    .warning-banner p{
+      margin:0;
+      color:rgba(245,244,255,.85);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    /* CONTENT SECTIONS */
+    .section{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 14px 45px rgba(0,0,0,.28);
+    }
+    .section .head{
+      padding:16px 16px 12px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(90deg, rgba(107,92,255,.14), rgba(57,217,138,.08));
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+    }
+    .section h2{
+      margin:0;
+      font-size:18px;
+      font-weight:1100;
+      letter-spacing:.2px;
+    }
+    .section .head p{
+      margin:0;
+      color:rgba(245,244,255,.68);
+      font-size:13px;
+      max-width:80ch;
+    }
+    .section .body{padding:14px 16px 16px}
+    p,li{color:rgba(245,244,255,.78); line-height:1.7; font-size:14px}
+    ul,ol{margin:10px 0; padding-left:18px}
+    
+    .panel{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(0,0,0,.16);
+      padding:12px;
+      margin:15px 0;
+    }
+    
+    strong{color:var(--text); font-weight:1100}
+    em{color:var(--muted2); font-style:italic}
+
+    /* FEATURE GRID */
+    .feature-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:15px;
+      margin:20px 0;
+    }
+    .feature{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(0,0,0,.14);
+      padding:18px;
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+    }
+    .feature .icon{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      background:linear-gradient(135deg, rgba(57,217,138,.15), rgba(107,92,255,.15));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      font-weight:1000;
+      flex-shrink:0;
+    }
+    .feature .content{
+      flex:1;
+    }
+    .feature h3{
+      margin:0 0 6px;
+      font-size:15px;
+      font-weight:1100;
+      color:var(--text);
+    }
+    .feature p{
+      margin:0;
+      font-size:13px;
+      color:var(--muted2);
+      line-height:1.5;
+    }
+
+    /* HELP CARDS */
+    .help-cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:15px;
+      margin:25px 0;
+    }
+    .help-card{
+      border:1px solid rgba(57,217,138,.2);
+      background:rgba(57,217,138,.08);
+      border-radius:16px;
+      padding:18px;
+      text-align:center;
+    }
+    .help-card h3{
+      margin:0 0 10px;
+      color:var(--accent);
+      font-weight:1100;
+      font-size:15px;
+    }
+    .help-card p{
+      margin:0;
+      font-size:13px;
+      line-height:1.5;
+    }
+    .help-card .btn{
+      margin-top:12px;
+      width:100%;
+      font-size:13px;
+      padding:10px 12px;
+    }
+
+    /* EMERGENCY CONTACT */
+    .emergency-contact{
+      background:linear-gradient(135deg, rgba(255,107,107,.12), rgba(255,107,107,.06));
+      border:1px solid rgba(255,107,107,.25);
+      border-radius:18px;
+      padding:20px;
+      margin:25px 0;
+    }
+    .emergency-contact h3{
+      margin:0 0 15px;
+      color:var(--danger);
+      font-weight:1100;
+      font-size:18px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .emergency-contact .contacts{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:15px;
+    }
+    .contact-item{
+      padding:12px;
+      border:1px solid rgba(255,107,107,.15);
+      border-radius:12px;
+      background:rgba(0,0,0,.2);
+    }
+    .contact-item h4{
+      margin:0 0 8px;
+      color:var(--danger);
+      font-weight:1000;
+      font-size:14px;
+    }
+    .contact-item p{
+      margin:0 0 6px;
+      font-size:13px;
+    }
+    .contact-item a{
+      color:var(--accent);
+      font-weight:900;
+      text-decoration:underline;
+    }
+
+    /* STATISTICS */
+    .stats-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+      margin:20px 0;
+    }
+    .stat-item{
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.14);
+      border-radius:14px;
+      padding:12px;
+      text-align:center;
+    }
+    .stat-item .number{
+      font-size:20px;
+      font-weight:1100;
+      color:var(--accent);
+      margin-bottom:4px;
+    }
+    .stat-item .label{
+      font-size:11px;
+      color:var(--muted2);
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:18px;
+      border-top:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+    }
+    .foot{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 16px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:start;
+    }
+    .legal{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:rgba(245,244,255,.72);
+      margin-top:10px;
+    }
+    .legal a{color:rgba(245,244,255,.78)}
+    .legal a:hover{text-decoration:underline}
+    .rg-logos{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+    }
+    .rg-logos img{height:30px; opacity:.92; filter: grayscale(100%)}
+
+    /* Responsive */
+    @media (max-width: 1020px){
+      .sidebar{display:none}
+      .tlinks{display:none}
+      .rg-hero h1{font-size:28px}
+      .feature-grid{grid-template-columns:1fr}
+      .help-cards{grid-template-columns:1fr}
+      .emergency-contact .contacts{grid-template-columns:1fr}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .foot{grid-template-columns:1fr}
+      .rg-logos{justify-content:flex-start}
+    }
+    @media (max-width: 520px){
+      .rg-hero h1{font-size:24px}
+      .rg-hero-content{padding:20px 16px}
+      .section .body{padding:12px 14px}
+      .stats-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar" aria-label="Seitennavigation">
+      <div class="brand">
+        <img src="images/logo.png" alt="Spinando Login Logo">
+        <div>
+          <div class="name">Spinando</div>
+          <div class="sub"><span class="flag">🇩🇪</span> <span>DE • Login & Hilfe</span></div>
+        </div>
+      </div>
+
+      <div class="sidebox" aria-label="Hauptmenü">
+        <div class="head">
+          <span>Navigation</span>
+          <span class="chip">18+</span>
+        </div>
+        <div class="body">
+          <div class="snav">
+            <a href="/"><span>Startseite</span><small>Zurück zur Hauptseite</small></a>
+            <a href="/#login-hilfe"><span>Login</span><small>Einloggen & Probleme</small></a>
+            <a href="/#bonus"><span>Bonus</span><small>Willkommensbonus</small></a>
+            <a href="/#app"><span>App</span><small>Mobil spielen</small></a>
+            <a href="/#zahlungen"><span>Zahlungen</span><small>Krypto & Karten</small></a>
+            <a href="/#sicherheit"><span>Sicherheit</span><small>Fair Play</small></a>
+            <a href="/#faq"><span>FAQ</span><small>Häufige Fragen</small></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebox" aria-label="Rechtliches">
+        <div class="head">
+          <span>Responsible Gaming</span>
+        </div>
+        <div class="body">
+          <div class="snav">
+            <a href="privacy-policy.html"><span>Datenschutz</span><small>Datenschutzerklärung</small></a>
+            <a href="terms.html"><span>AGB</span><small>Nutzungsbedingungen</small></a>
+            <a href="disclaimer.html"><span>Disclaimer</span><small>Haftungsausschluss</small></a>
+            <a href="responsible-gaming.html" style="background:rgba(107,92,255,.12); border-color:rgba(107,92,255,.3);">
+              <span>Responsible Gaming</span><small>Aktuelle Seite</small>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="note18" aria-label="Responsible Gaming Hinweis">
+        <div class="t">18+ • Verantwortungsvoll spielen</div>
+        <p>
+          Glücksspiel kann süchtig machen. Setzen Sie Limits, machen Sie Pausen und spielen Sie nur, wenn es für Sie passt.
+        </p>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- TOPBAR -->
+      <div class="topbar">
+        <div class="topbar-inner">
+          <nav class="tlinks" aria-label="Top Links">
+            <a href="/#bonus">Bonus</a>
+            <a href="/#app">App</a>
+            <a href="/#zahlungen">Zahlungen</a>
+            <a href="/#sicherheit">Sicherheit</a>
+          </nav>
+
+          <div class="actions">
+            <span class="pill" title="Sprache">🇩🇪 DE</span>
+            <a class="btn ghost" href="/#login-hilfe" aria-label="Login">Login</a>
+            <a class="btn primary" href="/#registrierung" aria-label="Registrieren">Registrieren</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- RESPONSIBLE GAMING HERO -->
+        <section class="rg-hero" aria-label="Responsible Gaming Übersicht">
+          <div class="rg-hero-content">
+            <h1>Responsible Gaming</h1>
+            <div class="subtitle">Verantwortungsvoll spielen - Spielsucht erkennen und vermeiden</div>
+            <p style="color:rgba(245,244,255,.82); margin:12px 0 0; font-size:15px; line-height:1.6;">
+              Glücksspiel soll unterhalten, nicht zum Problem werden. Auf dieser Seite finden Sie wichtige Informationen zum verantwortungsvollen Spielen, Warnzeichen für Spielsucht und Hilfsangebote.
+            </p>
+          </div>
+        </section>
+
+        <!-- WARNING BANNER -->
+        <div class="warning-banner">
+          <div class="icon">⚠️</div>
+          <div class="content">
+            <h3>Wichtige Sicherheitsinformation</h3>
+            <p>
+              Glücksspiel kann süchtig machen. Spielen Sie nur mit Geld, dessen Verlust Sie verkraften können. 
+              Diese Website ist ein Informationsportal – wir bieten keine Glücksspiel-Dienstleistungen an. 
+              Wenn Sie oder jemand in Ihrem Umfeld ein Glücksspielproblem hat, zögern Sie nicht, Hilfe in Anspruch zu nehmen.
+            </p>
+          </div>
+        </div>
+
+        <!-- STATISTICS -->
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="number">~250.000</div>
+            <div class="label">Spielsüchtige in Deutschland</div>
+          </div>
+          <div class="stat-item">
+            <div class="number">~2 Mio.</div>
+            <div class="label">Problematische Spieler</div>
+          </div>
+          <div class="stat-item">
+            <div class="number">18+</div>
+            <div class="label">Altersgrenze</div>
+          </div>
+          <div class="stat-item">
+            <div class="number">24/7</div>
+            <div class="label">Hilfe erhältlich</div>
+          </div>
+        </div>
+
+        <!-- SECTION 1 -->
+        <section class="section">
+          <div class="head">
+            <h2>Was ist Responsible Gaming?</h2>
+          </div>
+          <div class="body">
+            <p>
+              Responsible Gaming (Verantwortungsvolles Spielen) bezeichnet den verantwortungsbewussten Umgang mit Glücksspiel. Es geht darum, Glücksspiel als Unterhaltungsform zu genießen, ohne dabei die Kontrolle zu verlieren oder finanzielle Probleme zu riskieren.
+            </p>
+            <div class="feature-grid">
+              <div class="feature">
+                <div class="icon">💰</div>
+                <div class="content">
+                  <h3>Finanzielle Kontrolle</h3>
+                  <p>Setzen Sie sich Limits für Einzahlungen und Verluste. Spielen Sie nur mit Geld, das Sie entbehren können.</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="icon">⏰</div>
+                <div class="content">
+                  <h3>Zeitmanagement</h3>
+                  <p>Begrenzen Sie Ihre Spielzeit. Machen Sie regelmäßige Pausen und behalten Sie Ihre Hobbys bei.</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="icon">🧠</div>
+                <div class="content">
+                  <h3>Bewusstes Spielen</h3>
+                  <p>Spielen Sie zur Unterhaltung, nicht um Geldprobleme zu lösen oder Verluste auszugleichen.</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="icon">🛡️</div>
+                <div class="content">
+                  <h3>Selbstschutz</h3>
+                  <p>Nutzen Sie Selbstausschluss-Optionen, Limits und Sperrfunktionen der Anbieter.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section class="section">
+          <div class="head">
+            <h2>Warnzeichen für Spielsucht erkennen</h2>
+          </div>
+          <div class="body">
+            <p>
+              Spielsucht entwickelt sich oft schleichend. Diese Warnzeichen können auf ein problematisches Spielverhalten hinweisen:
+            </p>
+            
+            <div class="panel" style="border-color:rgba(255,107,107,.3); background:rgba(255,107,107,.08);">
+              <p style="margin:0; font-weight:900; color:var(--danger);">Emotionale & Verhaltenszeichen:</p>
+            </div>
+            <ul>
+              <li><strong>Gedankliche Vereinnahmung:</strong> Ständiges Denken an Glücksspiel</li>
+              <li><strong>Steigerung der Einsätze:</strong> Höhere Wetten für den gleichen Nervenkitzel</li>
+              <li><strong>Misserfolgsversuche:</strong> Vergebliche Versuche, weniger zu spielen</li>
+              <li><strong>Unruhe und Gereiztheit:</strong> Bei Einschränkung der Spielmöglichkeiten</li>
+              <li><strong>Fluchtverhalten:</strong> Spielen als Flucht vor Problemen</li>
+            </ul>
+
+            <div class="panel" style="border-color:rgba(255,204,102,.3); background:rgba(255,204,102,.08); margin-top:15px;">
+              <p style="margin:0; font-weight:900; color:var(--accent3);">Finanzielle & Soziale Zeichen:</p>
+            </div>
+            <ul>
+              <li><strong>Geldbeschaffung:</strong> Rückgriff auf Ersparnisse, Kredite oder Schulden</li>
+              <li><strong>Lügen:</strong> Verheimlichen des Ausmaßes des Spielens</li>
+              <li><strong>Vernachlässigung:</strong> Von Arbeit, Familie oder Hobbys</li>
+              <li><strong>Sozialer Rückzug:</strong> Isolation von Freunden und Familie</li>
+              <li><strong>Illegale Handlungen:</strong> Zur Geldbeschaffung fürs Spielen</li>
+            </ul>
+
+            <p style="margin-top:15px; font-size:13px; color:var(--muted2);">
+              <em>Wenn Sie mehrere dieser Anzeichen bei sich oder anderen erkennen, suchen Sie professionelle Hilfe.</em>
+            </p>
+          </div>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section class="section">
+          <div class="head">
+            <h2>Praktische Tipps für sicheres Spielen</h2>
+          </div>
+          <div class="body">
+            <p>
+              Mit diesen einfachen Maßnahmen können Sie verantwortungsvoll spielen:
+            </p>
+
+            <div class="help-cards">
+              <div class="help-card">
+                <h3>Setzen Sie Limits</h3>
+                <p>Bevor Sie spielen: Festes Budget, Zeitlimit und Verlustgrenze festlegen. Halten Sie sich daran!</p>
+              </div>
+              <div class="help-card">
+                <h3>Spielen Sie nicht allein</h3>
+                <p>Teilen Sie Ihr Spielverhalten mit vertrauten Personen. Gemeinsame Kontrolle hilft.</p>
+              </div>
+              <div class="help-card">
+                <h3>Nutzen Sie Pausen</h3>
+                <p>Regelmäßige Spielpausen einlegen. Mindestens 5 Minuten pro Stunde.</p>
+              </div>
+            </div>
+
+            <div class="panel">
+              <p style="margin:0;"><strong>📋 Selbsttest-Fragen vor dem Spielen:</strong></p>
+              <ul style="margin:10px 0 0;">
+                <li>Habe ich ein klares Budget für heute?</li>
+                <li>Kann ich diesen Geldbetrag verlieren, ohne in Probleme zu geraten?</li>
+                <li>Habe ich andere wichtige Verpflichtungen heute?</li>
+                <li>Spiele ich zur Unterhaltung oder aus anderen Gründen?</li>
+                <li>Fühle ich mich gestresst oder depressiv?</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section class="section">
+          <div class="head">
+            <h2>Hilfsangebote und Beratungsstellen</h2>
+          </div>
+          <div class="body">
+            <p>
+              In Deutschland gibt es zahlreiche kostenlose und anonyme Hilfsangebote für Spieler und Angehörige:
+            </p>
+
+            <!-- EMERGENCY CONTACT -->
+            <div class="emergency-contact">
+              <h3>🚨 Soforthilfe & Krisentelefone</h3>
+              <div class="contacts">
+                <div class="contact-item">
+                  <h4>Bundeszentrale für gesundheitliche Aufklärung (BZgA)</h4>
+                  <p>Kostenlose Beratung unter:</p>
+                  <a href="tel:08001331101">0800 1331 101</a>
+                  <p style="margin-top:8px; font-size:12px;">24 Stunden, 7 Tage die Woche</p>
+                </div>
+                <div class="contact-item">
+                  <h4>Nummer gegen Kummer</h4>
+                  <p>Kostenlose Beratung für Jugendliche:</p>
+                  <a href="tel:116111">116 111</a>
+                  <p style="margin-top:8px; font-size:12px;">Mo-Sa: 14-20 Uhr</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature">
+                <div class="icon">🏥</div>
+                <div class="content">
+                  <h3>Online-Beratung</h3>
+                  <p><strong>www.spielen-mit-verantwortung.de</strong> - Umfassende Informationen und Online-Beratung der BZgA</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="icon">👥</div>
+                <div class="content">
+                  <h3>Selbsthilfegruppen</h3>
+                  <p><strong>Anonyme Spieler</strong> - Bundesweites Netzwerk von Selbsthilfegruppen für Spielsüchtige</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="icon">💻</div>
+                <div class="content">
+                  <h3>Online-Sperrsysteme</h3>
+                  <p><strong>OASIS</strong> - Online-Sperrsystem für Sportwetten und Online-Casinos</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="icon">📱</div>
+                <div class="content">
+                  <h3>Apps & Tools</h3>
+                  <p><strong>CheckDeinSpiel</strong> - App zur Selbstkontrolle des Spielverhaltens</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 5 -->
+        <section class="section">
+          <div class="head">
+            <h2>Für Angehörige und Freunde</h2>
+          </div>
+          <div class="body">
+            <p>
+              Wenn Sie vermuten, dass eine Person in Ihrem Umfeld spielsüchtig ist:
+            </p>
+            <ul>
+              <li><strong>Sprechen Sie es an:</strong> Zeigen Sie Ihre Sorge, ohne Vorwürfe zu machen</li>
+              <li><strong>Informieren Sie sich:</strong> Über Spielsucht und Hilfsangebote</li>
+              <li><strong>Bieten Sie Unterstützung an:</strong> Bei der Suche nach professioneller Hilfe</li>
+              <li><strong>Schützen Sie sich selbst:</strong> Setzen Sie Grenzen und holen Sie sich Unterstützung</li>
+              <li><strong>Vermeiden Sie Geldleihen:</strong> Dies kann das Problem verschlimmern</li>
+            </ul>
+            
+            <div class="panel" style="margin-top:20px;">
+              <p style="margin:0;"><strong>📞 Beratungsstellen für Angehörige:</strong></p>
+              <ul style="margin:10px 0 0;">
+                <li><strong>BZgA-Angehörigenberatung:</strong> 0221 8992 0</li>
+                <li><strong>Caritas Suchthilfe:</strong> Lokale Beratungsstellen in ganz Deutschland</li>
+                <li><strong>Diakonie Suchthilfe:</strong> Bundesweites Beratungsnetzwerk</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 6 -->
+        <section class="section">
+          <div class="head">
+            <h2>Rechtliche Rahmenbedingungen in Deutschland</h2>
+          </div>
+          <div class="body">
+            <p>
+              Deutschland hat strenge Regularien zum Schutz der Spieler:
+            </p>
+            <ul>
+              <li><strong>Altersverifikation:</strong> Streng kontrolliert ab 18 Jahren</li>
+              <li><strong>Einzahlungslimits:</strong> Freiwillige und verpflichtende Limits möglich</li>
+              <li><strong>Sperrsysteme:</strong> OASIS (Online-Sperrsystem) und andere Sperroptionen</li>
+              <li><strong>Werbebeschränkungen:</strong> Strenge Regulierung der Glücksspielwerbung</li>
+              <li><strong>Transparenzpflicht:</strong> Klare Angaben zu Gewinnchancen und Risiken</li>
+            </ul>
+            
+            <div class="panel" style="border-color:rgba(57,217,138,.3); background:rgba(57,217,138,.08); margin-top:15px;">
+              <p style="margin:0;">
+                <strong>ℹ️ Wichtig:</strong> Spielen Sie nur bei lizenzierten und regulierten Anbietern. Diese unterliegen strengen Auflagen zum Spielerschutz.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FINAL MESSAGE -->
+        <div class="panel" style="text-align:center; border-color:var(--accent2); background:rgba(107,92,255,.08); margin-top:30px;">
+          <p style="margin:0; font-size:15px; font-weight:900;">
+            Glücksspiel ist Unterhaltung – kein Weg zu Reichtum. Spielen Sie verantwortungsvoll, setzen Sie Limits und zögern Sie nicht, Hilfe in Anspruch zu nehmen, wenn Sie sie benötigen.
+          </p>
+          <p style="margin:10px 0 0; font-size:13px; color:var(--muted2);">
+            Diese Informationen ersetzen keine professionelle Beratung. Bei Problemen wenden Sie sich bitte an die genannten Hilfsangebote.
+          </p>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="foot">
+          <div>
+            <div style="font-weight:1100;">© <span id="currentYear"></span> spinando-login.com</div>
+            <div style="margin-top:6px; color:rgba(245,244,255,.62); font-size:12px;">
+              Informationsportal (18+) • Keine Gewinngarantien • Inhalte können sich ändern.
+            </div>
+
+            <div class="legal" aria-label="Rechtliches">
+              <a href="privacy-policy.html">Datenschutz</a>
+              <span style="opacity:.5">•</span>
+              <a href="terms.html">AGB</a>
+              <span style="opacity:.5">•</span>
+              <a href="responsible-gaming.html" style="color:var(--accent2);">Responsible Gaming</a>
+              <span style="opacity:.5">•</span>
+              <a href="disclaimer.html">Disclaimer</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="rg-logos" aria-label="Responsible Gaming Logos">
+              <img src="images/footer-18plus.png" alt="18+">
+              <img src="images/footer-begambleaware.png" alt="BeGambleAware">
+              <img src="images/footer-gamcare.png" alt="GamCare">
+              <img src="images/footer-gamban.png" alt="Gamban">
+              <img src="images/footer-betblocker.png" alt="BetBlocker">
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        // Set current date and year
+        document.addEventListener('DOMContentLoaded', function() {
+          // Set current year
+          document.getElementById('currentYear').textContent = new Date().getFullYear();
+          
+          // Add image fallback handling
+          const images = document.querySelectorAll('img[src^="images/"]');
+          images.forEach(img => {
+            img.onerror = function() {
+              console.log('Image failed to load:', this.src);
+              if (this.src.includes('footer')) {
+                this.style.display = 'none';
+              }
+            };
+          });
+          
+          // Add click handlers for emergency numbers
+          document.querySelectorAll('.emergency-contact a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+              if (!confirm('Möchten Sie diese Nummer anrufen?\n' + this.textContent)) {
+                e.preventDefault();
+              }
+            });
+          });
+        });
+      </script>
+    </main>
+  </div>
+</body>
+</html>
