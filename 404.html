@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Seite nicht gefunden - Spinando Login</title>
+  <meta name="description" content="Die gesuchte Seite existiert nicht. Kehren Sie zur Startseite von Spinando Login zurück, um Hilfe zu Login, Bonus und Support zu finden." />
+
+  <style>
+    :root{
+      --bg:#0b0720;
+      --bg2:#0a061a;
+      --panel:#120a2a;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+      --text:#f5f4ff;
+      --muted:rgba(245,244,255,.74);
+      --muted2:rgba(245,244,255,.62);
+      --accent:#39d98a;
+      --accent2:#6b5cff;
+      --accent3:#ffcc66;
+      --danger:#ff6b6b;
+      --shadow:0 18px 55px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:22px;
+    }
+
+    *{box-sizing:border-box; margin:0; padding:0}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background: 
+        radial-gradient(circle at 70% 5%, rgba(107, 92, 255, 0.25), transparent 60%),
+        radial-gradient(circle at 20% 20%, rgba(255, 204, 102, 0.15), transparent 50%),
+        linear-gradient(180deg, #0a061a 0%, #070513 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{
+      max-width:700px;
+      width:100%;
+      border-radius:var(--radius2);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(800px 420px at 25% 10%, rgba(107,92,255,.28), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      backdrop-filter:blur(10px);
+    }
+
+    .header{
+      padding:24px 24px 20px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(90deg, rgba(107,92,255,.18), rgba(57,217,138,.12));
+      text-align:center;
+    }
+
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      padding:10px 16px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      margin-bottom:12px;
+    }
+
+    .brand-logo{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      background:linear-gradient(135deg, var(--accent2), var(--accent));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:1000;
+      font-size:20px;
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.16);
+    }
+
+    .brand-name{
+      font-weight:1100;
+      font-size:24px;
+      letter-spacing:.2px;
+    }
+
+    .subtitle{
+      color:rgba(245,244,255,.72);
+      font-size:14px;
+      margin-top:4px;
+    }
+
+    .error-content{
+      padding:36px 28px 32px;
+      text-align:center;
+      background:
+        radial-gradient(600px 320px at 30% 20%, rgba(57,217,138,.14), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.16));
+    }
+
+    .error-code{
+      font-size:140px;
+      font-weight:1200;
+      line-height:1;
+      background:linear-gradient(135deg, var(--accent2), var(--accent), var(--accent3));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      margin-bottom:8px;
+      letter-spacing:-6px;
+      text-shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+
+    h1{
+      font-size:32px;
+      font-weight:1100;
+      margin-bottom:14px;
+      letter-spacing:.2px;
+    }
+
+    .error-desc{
+      color:rgba(245,244,255,.78);
+      font-size:17px;
+      line-height:1.7;
+      max-width:46ch;
+      margin:0 auto 28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px 32px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg, var(--accent), rgba(57,217,138,.86));
+      color:#07160f;
+      font-weight:1000;
+      font-size:16px;
+      cursor:pointer;
+      transition:transform 0.2s, box-shadow 0.2s;
+      box-shadow:0 12px 32px rgba(0,0,0,.35);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 40px rgba(0,0,0,.45);
+    }
+
+    .btn-secondary{
+      background:rgba(107,92,255,.15);
+      border-color:rgba(107,92,255,.25);
+      color:var(--text);
+      margin-left:12px;
+    }
+
+    .quick-links{
+      margin-top:32px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      justify-content:center;
+    }
+
+    .link-chip{
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:rgba(245,244,255,.85);
+      font-weight:900;
+      font-size:14px;
+      transition:all 0.2s;
+    }
+
+    .link-chip:hover{
+      background:rgba(255,255,255,.08);
+      border-color:rgba(255,255,255,.18);
+      transform:translateY(-1px);
+      box-shadow:0 8px 20px rgba(0,0,0,.25);
+    }
+
+    .info-panel{
+      margin-top:28px;
+      padding:18px 20px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.03);
+      font-size:14px;
+      color:rgba(245,244,255,.68);
+      line-height:1.6;
+      text-align:left;
+    }
+
+    .info-panel strong{
+      color:rgba(245,244,255,.92);
+      font-weight:1100;
+    }
+
+    .footer{
+      padding:20px 24px;
+      border-top:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.22);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .legal{
+      font-size:12px;
+      color:rgba(245,244,255,.55);
+    }
+
+    .legal a{
+      color:rgba(245,244,255,.75);
+      margin:0 8px;
+    }
+
+    .legal a:hover{
+      text-decoration:underline;
+    }
+
+    .counter{
+      font-size:13px;
+      color:rgba(245,244,255,.60);
+      font-weight:900;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .countdown{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:28px;
+      height:28px;
+      border-radius:999px;
+      background:rgba(107,92,255,.15);
+      border:1px solid rgba(107,92,255,.25);
+      font-weight:1000;
+    }
+
+    @media (max-width: 768px){
+      .error-code{
+        font-size:100px;
+        letter-spacing:-4px;
+      }
+      h1{
+        font-size:26px;
+      }
+      .error-desc{
+        font-size:16px;
+      }
+      .footer{
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+      }
+      .legal{
+        order:2;
+      }
+      .counter{
+        order:1;
+      }
+      .btn-secondary{
+        margin-left:0;
+        margin-top:12px;
+      }
+    }
+
+    @media (max-width: 480px){
+      .container{
+        border-radius:18px;
+      }
+      .header, .error-content, .footer{
+        padding:20px 16px;
+      }
+      .error-code{
+        font-size:80px;
+      }
+      h1{
+        font-size:22px;
+      }
+      .quick-links{
+        gap:10px;
+      }
+      .link-chip{
+        padding:8px 14px;
+        font-size:13px;
+      }
+      .btn{
+        padding:14px 24px;
+        font-size:15px;
+      }
+    }
+  </style>
+
+  <!-- Schema Markup für 404-Seite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Seite nicht gefunden - Spinando Login",
+    "description": "Die gesuchte Seite existiert nicht. Kehren Sie zur Startseite von Spinando Login zurück.",
+    "url": "https://spinando-login.com/404.html",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://spinando-login.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <div class="container" role="main">
+    <div class="header">
+      <div class="brand">
+        <div class="brand-logo">404</div>
+        <div class="brand-name">Spinando Login</div>
+      </div>
+      <div class="subtitle">Seite nicht gefunden • 18+ • Verantwortungsvoll spielen</div>
+    </div>
+
+    <div class="error-content">
+      <div class="error-code" aria-label="Fehlercode 404">404</div>
+      
+      <h1>Login-Seite nicht gefunden</h1>
+      
+      <p class="error-desc">
+        Die von Ihnen gesuchte Seite konnte nicht gefunden werden. Sie wurde möglicherweise verschoben, umbenannt oder existiert nicht mehr.
+      </p>
+      
+      <div style="margin-bottom:20px;">
+        <a href="/" class="btn" aria-label="Zurück zur Startseite">
+          Zurück zu Spinando Login
+        </a>
+        <a href="/#faq" class="btn btn-secondary" aria-label="Zu FAQ">
+          Hilfe & FAQ ansehen
+        </a>
+      </div>
+
+      <div class="quick-links">
+        <a href="/#login-hilfe" class="link-chip">Login Hilfe</a>
+        <a href="/#bonus" class="link-chip">Willkommensbonus</a>
+        <a href="/#app" class="link-chip">Mobile App</a>
+        <a href="/#zahlungen" class="link-chip">Zahlungsoptionen</a>
+        <a href="/#sicherheit" class="link-chip">Sicherheit & Support</a>
+      </div>
+
+      <div class="info-panel">
+        <strong>Tipp:</strong> Nutzen Sie die Navigation oben, um direkt zu den wichtigsten Bereichen von Spinando Login zu gelangen – oder kehren Sie einfach zur Startseite zurück, um Hilfe zu Login, Registrierung, Bonus und Support zu finden.
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="legal">
+        © <span id="currentYear"></span> spinando-login.com | 
+        <a href="/privacy-policy.html">Datenschutz</a> • 
+        <a href="/terms.html">AGB</a> • 
+        <a href="/disclaimer.html">Disclaimer</a> •
+        <a href="/responsible-gaming.html">Responsible Gaming</a>
+      </div>
+      <div class="counter" id="redirectCounter">
+        Automatische Weiterleitung in 
+        <span class="countdown" id="countdown">10</span>
+        Sekunden
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Aktuelles Jahr setzen
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Automatischer Redirect-Countdown
+    let seconds = 10;
+    const countdownElement = document.getElementById('countdown');
+    const countdownInterval = setInterval(() => {
+      seconds--;
+      countdownElement.textContent = seconds;
+      
+      if (seconds <= 0) {
+        clearInterval(countdownInterval);
+        window.location.href = "/";
+      }
+    }, 1000);
+    
+    // Verfolgung der 404-Fehlerseite (falls Analytics vorhanden)
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'page_view', {
+        'page_title': '404 - Seite nicht gefunden - Spinando Login',
+        'page_location': window.location.href,
+        'page_path': window.location.pathname
+      });
+    }
+    
+    // Klick auf jeden Link stoppt den Countdown
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        clearInterval(countdownInterval);
+        document.getElementById('redirectCounter').innerHTML = '<span style="color:var(--accent);">✓ Weiterleitung gestoppt</span>';
+      });
+    });
+    
+    // Responsive Anpassungen
+    function adjustLayout() {
+      const width = window.innerWidth;
+      const buttons = document.querySelectorAll('.btn');
+      
+      if (width < 768) {
+        // Anpassung für mobile Geräte
+        buttons.forEach(btn => {
+          btn.style.width = '100%';
+          btn.style.margin = '4px 0';
+          btn.style.justifyContent = 'center';
+        });
+      }
+    }
+    
+    // Initial anpassen und auf Resize hören
+    adjustLayout();
+    window.addEventListener('resize', adjustLayout);
+  </script>
+</body>
+</html>
