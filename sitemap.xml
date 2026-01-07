@@ -29,4 +29,10 @@
 <changefreq>yearly</changefreq>
 <priority>0.2</priority>
 </url>
+<url>
+<loc>https://spinando-login.com/404.html</loc>
+<lastmod>2026-01-04</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.2</priority>
+</url>
 </urlset>
