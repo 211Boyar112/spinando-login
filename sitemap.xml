@@ -1,6 +1,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://spinando-login.com/</loc>
+<loc>https://spinando-login.com</loc>
 <lastmod>2026-01-04</lastmod>
 <changefreq>weekly</changefreq>
 <priority>1.0</priority>
@@ -30,4 +30,5 @@
 <priority>0.2</priority>
 </url>
 </urlset>
+
 
